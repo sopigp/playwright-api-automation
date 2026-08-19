@@ -1,0 +1,30 @@
+# Workflow name
+name: Playwright API Automation 
+
+# run workflow on push or pull request events but only for the main branch
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-test:
+    runs-on: ubuntu-latest
+
+    steps:
+# Fetch the source code from this repository to the runner.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API tests
+        run: npx playwright test
