@@ -130,7 +130,7 @@ expect(getPatchedBody.id).toBe(productId);
 expect(getPatchedBody.name).toBe('POS Product - Indomie Goreng Updated');
 expect(getPatchedBody.data.category).toBe('Food');
 expect(getPatchedBody.data.price).toBe(4000);
-expect(getPatchedBody.data.stock).toBe(50);
+expect(getPatchedBody.data.stock).toBe(80);
 expect(getPatchedBody.data.sku).toBe('SKU-IND-001');
 
 // METHOD : DELETE
