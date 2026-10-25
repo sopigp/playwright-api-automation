@@ -1,5 +1,5 @@
 # Workflow name
-name: Playwright API Automation 
+name: Playwright API Automation - 2
 
 # run workflow on push or pull request events but only for the main branch
 on:
