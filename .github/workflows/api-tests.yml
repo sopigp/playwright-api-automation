@@ -1,21 +1,25 @@
+
 # Workflow name
 name: Playwright API Automation - 2
 
-# run workflow on push or pull request events but only for the main branch
+# Triggers
 on:
   push:
     branches: [main]
 
   pull_request:
     branches: [main]
+
   workflow_dispatch:
+
+  workflow_call:
 
 jobs:
   api-test:
     runs-on: ubuntu-latest
 
     steps:
-# Fetch the source code from this repository to the runner.
+      # Fetch the source code from this repository to the runner.
       - name: Checkout repository
         uses: actions/checkout@v6
 
