@@ -1,6 +1,6 @@
 
 # Workflow name
-name: Playwright Web Automation
+name: Playwright API Automation - 1
 
 # Run on push, pull request, or manual trigger
 on:
