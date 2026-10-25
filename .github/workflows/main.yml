@@ -1,0 +1,36 @@
+
+# Workflow name
+name: Playwright Web Automation
+
+# Run on push, pull request, or manual trigger
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  web-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Fetch the source code from this repository to the runner.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Web tests
+        run: npx playwright test tests/web
